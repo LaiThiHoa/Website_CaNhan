@@ -1,0 +1,442 @@
+body {
+  /* background-color: #FFA609; */
+  /* background-color: bisque; */
+  background-color:  #C5C6C7;
+  font-family: "Pacifico", cursive;;
+
+}
+/* Thiết lập kiểu cho các tab */
+.tab {
+  display: inline-block;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 20px;
+  padding-right: 10px;
+  text-align: center;
+  transition: transform 0.3s ease, color 0.3s ease, background-color 0.3s ease; /* Tăng thời gian cho hiệu ứng */
+  position: relative;
+}
+
+/* Hiệu ứng active cho tab */
+.tab.active {
+  color: #FF6600; /* Đổi màu chữ khi active */
+  transform: scale(1.1) translateY(-5px); /* Phóng to và nâng lên */
+ 
+}
+
+/* Hiệu ứng phóng to khi hover */
+.tab:hover {
+  transform: scale(1.1) translateY(-5px); /* Phóng to và nâng lên khi hover */
+  color: #FF6600; /* Đổi màu khi hover */
+
+}
+
+/* Keyframes cho hiệu ứng pulse (động) */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1); /* Kích thước ban đầu */
+  }
+  50% {
+    transform: scale(1.3); /* Phóng to khi ở giữa */
+  }
+}
+
+/* Áp dụng animation pulse cho các tab */
+.home {
+  font-weight: bold;
+  animation: pulse 2s ease-in-out infinite; /* Tăng thời gian để hiệu ứng trông mượt mà */
+}
+
+/* Keyframes cho hiệu ứng di chuyển lên xuống (Up and Down) */
+@keyframes upDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px); /* Tăng độ cao khi di chuyển */
+  }
+}
+
+/* Áp dụng animation upDown cho các tab khi active */
+.tab.active {
+  /* animation: upDown 1s ease-in-out infinite;  */
+}
+
+/* Thiết lập kiểu cho phần tab-container */
+.tab-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px 0;
+  position: fixed; /* Cố định phần tab ở trên cùng */
+  top: 0;
+  left: 0;
+  right: 0;
+  /* background-color: rgba(128, 128, 128, 0.925);  */
+  z-index: 1000; /* Đảm bảo tab luôn hiển thị trên các phần tử khác */
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); Thêm bóng mờ phía dưới để tạo chiều sâu */
+  padding-top: 10px;
+}
+
+/* Thiết lập kiểu cho các biểu tượng */
+.tab-container i {
+  margin-right: 10px; /* Khoảng cách giữa biểu tượng và văn bản */
+}
+
+/* Hiệu ứng di chuyển và màu sắc khi hover trên các icon */
+.tab-container i:hover {
+  transform: scale(1.2); /* Phóng to icon khi hover */
+  color: #FF6600; /* Đổi màu khi hover */
+  transition: transform 0.3s ease, color 0.3s ease; /* Thêm chuyển động mượt mà */
+}
+
+/* Khoảng cách cho phần nội dung phía dưới tab cố định (để không bị che khuất) */
+body {
+  padding-top: 80px; /* Tạo không gian phía trên nội dung chính */
+}
+
+.tab-content {
+  display: none;
+  padding: 20px;
+  border-bottom: 1px gray;
+  
+}
+.tab-content img{
+  width: 100%;
+  /* border-radius: 20px; */
+}
+
+.tab-content.active {
+  display: block;
+}
+.tab-container {
+  display: flex;
+
+  /* padding-left: 40%; */
+}
+.ri-user-3-line{
+  padding-right: 2px;
+}
+.tab-container a{
+  text-decoration: none;
+}
+#tab1 {
+  text-align: center;
+  border-radius: 8px;
+  padding-top: 3px;
+}
+h1 {
+  font-size: 50px;
+  padding-bottom: 0px;
+  /* font-family: "Sofia", sans-serif; */
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+p {
+  font-size: 20px;
+  font-family: "Pacifico", cursive;
+}
+h2 {
+  margin-top: 5px;
+  font-size: 100px;
+  margin-left: 50px;
+ 
+}
+
+.lab-tabs {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.tab-lab {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.tab-lab.active {
+  border-bottom: #FF6600 ;
+  color: white;
+}
+
+.lab-item {
+  display: none;
+}
+
+.lab-item.active {
+  display: block;
+}
+iframe {
+  border: none;
+  border-radius: 8px;
+}
+/*  */
+.tab-container .ri-facebook-circle-fill{
+  border-radius: 50%;
+  font-size: 35px;
+  color: white;
+  margin-right: 10px;
+  transition: transform 0.2s ease; 
+  display: inline-block;
+}
+.tab-container .ri-facebook-circle-fill:hover{
+  color: black;
+  transform: scale(1.2);;
+}
+.tab-container .ri-messenger-fill{
+  border-radius: 50%;
+  font-size: 35px;
+  color: white;
+  margin-right: 10px;
+  transition: transform 0.2s ease; 
+  display: inline-block;
+}
+.tab-container .ri-messenger-fill:hover{
+  color: black;
+  transform: scale(1.2);
+}
+
+.tab-container .ri-tiktok-fill{
+  
+  border-radius: 50%;
+  font-size: 35px;
+  color: white;
+  margin-right: 10px;
+  transition: transform 0.2s ease; 
+  display: inline-block;
+}
+.tab-container .ri-tiktok-fill:hover{
+  color: black;
+  transform: scale(1.2);;
+}
+.ri-facebook-circle-fill a{
+  text-decoration: none;
+}
+.grid{
+  display: grid;
+  grid-template-columns: 60% 40%;
+  border-radius: 20px;
+}
+.left img{
+  width: 100%;
+  height: auto;
+}
+.right{
+  background-color: white;
+  padding: 10px 15px;
+}
+.right p{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  line-height: 2;
+  padding-bottom: 20px;
+
+}
+.right .icon a{
+  text-decoration: none;
+  font-size: 20px;
+  margin-right: 15px;
+  color: black;
+  border: 1px solid black;
+  border-radius: 50%;
+  padding: 5px 5px;
+
+}
+.header-tab2 img{
+ 
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.header-tab2 img:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.aboutme h2{
+  text-align: center;
+  margin-bottom: 10px;
+  background-color: white;
+  border-radius: 20px;
+}
+.left img{
+  border-radius: 0%;
+}
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  margin-top: auto;
+}
+
+footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Liên kết mạng xã hội với biểu tượng */
+footer .social-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 10px 0px;
+}
+
+/* Cấu hình biểu tượng mạng xã hội */
+footer .social-links a {
+  /* padding-right: 60px; */
+  padding: 0px 60px;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  /* background-color: #444; */
+  color: #fff;
+  font-size: 1.5em;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hiệu ứng khi hover */
+footer .social-links a:hover {
+
+  color: #fff;
+  transform: scale(1.2) rotate(10deg); /* Phóng to và xoay nhẹ */
+}
+
+/* Phần bản quyền */
+footer .copyright {
+  font-size: 0.9em;
+  color: #ccc;
+  margin-top: 10px;
+}
+
+/* chỉnh giao diện xem trên điện thoại */
+@media (max-width: 768px) {
+  /* Thiết lập lại kích thước chữ và padding cho các thẻ */
+  .tab {
+      font-size: 16px;
+      padding: 8px 15px;
+  }
+
+  h1 {
+      font-size: 35px;
+  }
+
+  h2 {
+      font-size: 40px;
+      margin-left: 20px;
+  }
+
+  p {
+      font-size: 16px;
+  }
+
+  .tab-container {
+      flex-direction: column; /* Đưa các tab thành cột */
+      align-items: center;
+  }
+
+ 
+ 
+
+  /* Điều chỉnh hình ảnh và header-tab2 */
+  .header-tab2 {
+      flex-direction: column; /* Chuyển từ hàng ngang sang cột dọc */
+      height: auto;
+  }
+  .header-tab2 img {
+      width: 100%; /* Đảm bảo ảnh chiếm toàn bộ chiều rộng */
+      margin-bottom: 20px;
+      margin-right: 0;
+  }
+  .header-tab2 h2 {
+      font-size: 30px;
+      padding-right: 0;
+      margin-left: 0;
+  }
+
+  /* Điều chỉnh lưới để hiển thị theo chiều dọc */
+  .grid {
+      grid-template-columns: 1fr;
+  }
+
+  .left img {
+      width: 100%;
+      height: auto;
+  }
+
+  /* Footer và liên kết mạng xã hội */
+  footer .social-links a {
+      padding: 0px;
+      margin: 0 5px; /* Giảm khoảng cách giữa các biểu tượng */
+  }
+
+
+  /* Thay đổi kích thước và bố cục cho footer */
+  footer .social-links {
+      flex-direction: row; /* Sắp xếp theo chiều ngang nhưng với khoảng cách nhỏ */
+      gap: 10px;
+  }
+
+  /* Điều chỉnh font-size của footer */
+  footer .copyright {
+      font-size: 0.8em;
+  }
+}
+.activities {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.activity {
+  /* background-color: #333; */
+  border: 3px solid #333;
+  color: black;
+  padding: 15px 30px;
+  border-radius: 20px;
+  font-size: 18px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  position: relative;
+  text-decoration: none;
+}
+
+.activity:hover {
+  color: white;
+  background-color: #FF6600;
+  border:3px solid #FF6600;
+  box-shadow: 0 0 10px #FF6600 ;
+  transition: 0.33s ease-in-out;
+
+  cursor: pointer;
+}
+
+.tooltip {
+  visibility: hidden;
+  background-color: #807e7e;
+  color: black;
+  text-align: center;
+  padding: 10px 20px;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.activity:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+.result{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
